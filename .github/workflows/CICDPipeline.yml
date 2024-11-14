@@ -22,8 +22,8 @@ jobs:
           node-version: '16'  # Set the Node.js version your project needs
 
       - name: Change directory
-        run: cd CodeCascade
-        
+        run: cd angular-16-client
+
       - name: Install dependencies
         run: npm install
 
