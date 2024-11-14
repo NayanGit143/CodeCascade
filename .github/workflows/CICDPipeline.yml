@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: '16'  # Set the Node.js version your project needs
 
+      - name: Change directory
+        run: cd CodeCascade
+        
       - name: Install dependencies
         run: npm install
 
