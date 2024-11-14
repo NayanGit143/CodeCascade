@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'  # Set the Node.js version your project needs
+      
+      - name: List all files in the workspace
+        run: ls -R /home/runner/work
 
       - name: Change directory
         run: cd angular-16-client
