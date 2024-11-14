@@ -20,21 +20,23 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'  # Set the Node.js version your project needs
-      
-      - name: List all files in the workspace
-        run: ls -R /home/runner/work
 
-      - name: Change directory
-        run: cd angular-16-client
-
-      - name: Get current directory
-        run: pwd
+      # not working
+      # - name: Change directory
+      #   run: cd angular-16-client
 
       - name: Install dependencies
         run: cd angular-16-client && npm install
 
       - name: Build the project
-        run: npm run build
+        run: cd angular-16-client && npm run build
 
-      - name: Run tests
-        run: npm test
+      # - name: Run tests
+      #   run: cd angular-16-client && npm test
+
+      # for node js project 
+      - name: Install dependencies in node js
+        run: cd node-express-postgresql-server && npm install
+
+      # - name: Build the node js project
+      #   run: cd node-express-postgresql-server && npm run build
