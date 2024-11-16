@@ -1,0 +1,21 @@
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["CI/CD Pipeline"]
+    types:
+      - completed
+
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: Pull Docker image
+      run: sudo docker pull nayandevdocker/angular-16-client:latest
+    - name: Delete Old docker container
+      run: sudo docker rm -f angular-16-client-container || true
+    - name: Run Docker Container
+      run: sudo docker run -d -p 8080:8080 --name angular-16-client-container nayandevdocker/angular-16-client
