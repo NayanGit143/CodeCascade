@@ -18,4 +18,4 @@ jobs:
     - name: Delete Old docker container
       run: docker rm -f angular-16-client-container || true
     - name: Run Docker Container
-      run: docker run -d -p 8080:8080 --name angular-16-client-container nayandevdocker/angular-16-client
+      run: docker run -d -p 4200:4200 --name angular-16-client-container nayandevdocker/angular-16-client
