@@ -25,18 +25,18 @@ jobs:
       # - name: Change directory
       #   run: cd angular-16-client
 
-      - name: Install dependencies
-        run: cd angular-16-client && npm install
+      # - name: Install dependencies
+      #   run: cd angular-16-client && npm install
 
-      - name: Build the project
-        run: cd angular-16-client && npm run build
+      # - name: Build the project
+      #   run: cd angular-16-client && npm run build
 
       # - name: Run tests
       #   run: cd angular-16-client && npm test
 
       # for node js project 
-      - name: Install dependencies in node js
-        run: cd node-express-postgresql-server && npm install
+      # - name: Install dependencies in node js
+      #   run: cd node-express-postgresql-server && npm install
 
       # - name: Build the node js project
       #   run: cd node-express-postgresql-server && npm run build
@@ -48,6 +48,6 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
       - name: Build the Docker image
-        run: docker build -t angular-16-client .
+        run: cd angular-16-client && docker build -t angular-16-client .
       - name: push to Dockerhub
-        run: docker push nayandevdocker/angular-16-client:latest
+        run: cd angular-16-client && docker push nayandevdocker/angular-16-client:latest
