@@ -10,7 +10,7 @@ jobs:
 
   build:
 
-    runs-on: [self-hosted, DESKTOP-L4VG75C]
+    runs-on: DESKTOP-L4VG75C
 
     steps:
     - name: Pull Docker image
