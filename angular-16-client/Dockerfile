@@ -17,10 +17,10 @@ COPY . .
 RUN npm run build --prod
 
 # Step 7: Use Nginx to serve the built Angular app
-# FROM nginx:alpine
+FROM nginx:alpine
 
 # Step 8: Copy the built Angular app from the build stage to the Nginx server's html folder
-# COPY --from=build /app/dist/angular-16-crud /usr/share/nginx/html
+COPY --from=build /app/dist/angular-16-crud /usr/share/nginx/html
 
 # Step 9: Expose the Nginx default port (80)
 EXPOSE 4200
