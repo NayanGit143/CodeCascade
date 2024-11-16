@@ -50,4 +50,4 @@ jobs:
       - name: Build the Docker image
         run: cd angular-16-client && docker build -t angular-16-client .
       - name: push to Dockerhub
-        run: cd angular-16-client && docker push nayandevdocker/angular-16-client:latest
+        run: cd angular-16-client && docker push angular-16-client:latest
